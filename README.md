@@ -2,4 +2,7 @@
 > Template of a split website
 
 ![screenshot](screen.png)
-![responsive](responsive.gif)
+
+<p align="center">
+  <img src="responsive.gif alt="GIF" /">
+</p>
