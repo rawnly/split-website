@@ -1,0 +1,86 @@
+// _animation.sass
+@mixin keyframes($name)
+    @-webkit-keyframes $name
+        @content
+    @-moz-keyframes $name
+        @content
+    @-ms-keyframes $name
+        @content
+    @-o-keyframes $name
+        @content
+    @keyframes $name
+        @content
+
+@mixin animation($str)
+  -webkit-animation: $str
+  -moz-animation: $str
+  -ms-animation: $str
+  -o-animation: $str
+  animation: $str
+
+// _clearfix.sass
+@mixin clearfix()
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+      clear: both
+
+// _move.sass
+@mixin move($x: 50%, $y: $x)
+  position: absolute
+
+  left: $x
+  top: $y
+
+  transform: translate(-$x, -$y)
+
+// _pulse
+@mixin pulse($timing: 1.5s, $scale: .9, $fade: false, $extra: translate(0, 0))
+  @keyframes pulse
+    0%
+      transform: $extra scale($scale)
+      @if $fade == true
+        opacity: .7
+      @else
+        opacity: 1
+    50%
+      transform: $extra scale(1)
+      opacity: 1
+    100%
+      transform: $extra scale($scale)
+      @if $fade == true
+        opacity: .7
+      @else
+        opacity: 1
+
+  +animation($timing pulse infinite)
+
+// _rem
+@function calculateRem($size)
+  $remSize: $size / 16px
+  @return $remSize * 1rem
+
+@mixin font-size($size)
+  font-size: $size
+  font-size: calculateRem($size)
+
+// _shadow
+@mixin shadow($level)
+  @if $level == 1
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+  @else if $level == 2
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  @else if $level == 3
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+  @else if $level == 4
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+  @else if $level == 5
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+
+// _tr
+@mixin tr($t:.3s, $prop:ease)
+  transition-duration: $t
+  transition-timing-function: $prop
+  -webkit-transition-timing-function: $prop

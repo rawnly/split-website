@@ -1,0 +1,17 @@
+{
+  "name": "template-splitwebsite",
+  "version": "0.5.0",
+  "description": "Template of a split website",
+  "main": "Gulpfile.js",
+  "repository": "https://github.com/Rawnly/split-website.git",
+  "author": "Rawnly <fedevitale99@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "chalk": "^1.1.3",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.3",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8"
+  }
+}

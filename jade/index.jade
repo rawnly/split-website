@@ -1,0 +1,25 @@
+// output: ../src/index.html
+- var pageName = 'home'
+- var title = `${pageName.split('')[0].toUpperCase()}${pageName.slice(1)}`
+- var pageColor = '#fff'
+- var favicon = 'https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/128/servers.png'
+
+doctype html
+html(lang="en")
+  head
+    include ext/head
+  body
+    .is-container
+      .is-left.background
+      .is-left  
+        h1.center Enjoy now
+        
+      .is-right
+        h1 Become a partner
+        p.justify Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        
+        .is-input-contianer
+          input#name(type="text" placeholder="Jhon Doe")
+          br
+          input#email(type="mail" placeholder="jhon@doe.it")
+          input#send(type="button" value="Send")
